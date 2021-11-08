@@ -22,3 +22,4 @@ int (*get_specifier(const char *format))(va_list)
 		counter++;
 	}
 	return (0);
+}
