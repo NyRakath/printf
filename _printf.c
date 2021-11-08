@@ -2,7 +2,7 @@
 /**
  * _printf - Print all data type
  * @format: string to get the data type
- * Return: 
+ * Return: 0 on success.
  */
 int _printf(const char *format, ...)
 {
@@ -26,5 +26,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ap);
- 	return (0);
+	return (0);
 }
