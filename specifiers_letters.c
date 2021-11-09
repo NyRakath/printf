@@ -17,9 +17,11 @@ int specifier_c(va_list ap)
 int specifier_s(va_list ap)
 {
 	int length = 0;
-	char *sval;
+	char *sval = va_arg(ap, char *);
 
-	for (sval = va_arg(ap, char *); *sval; sval++)
+	if (sval == NULL)
+		sval = "(null)";
+	for (; *sval; sval++)
 	{
 		_putchar(*sval);
 		length++;
