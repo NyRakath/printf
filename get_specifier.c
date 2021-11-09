@@ -20,5 +20,5 @@ int (*get_specifier(const char *format))(va_list)
 			return (type[counter].f);
 		counter++;
 	}
-	return (0);
+	return (NULL);
 }
