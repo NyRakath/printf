@@ -1,40 +1,35 @@
 #include "main.h"
 /**
+ * recursion_d - Takes all numbers of an argument to print
+ * @n: Number argument.
+ * Return: 0 on success.
+ */
+int recursion_d(int n)
+{
+	int size = 0;
+
+	if (n < 0)
+	{
+		size += _putchar('-');
+		n = (-(n));
+	}
+	if (n == 0)
+		size += _putchar('0');
+	if (n / 10)
+		recursion_d(n / 10);
+	size += _putchar(n % 10 + '0');
+	return (size);
+}
+/**
  * specifier_d - Convert the argument into integers.
  * @ap: Pointer to the list of arguments to print.
  * Return: 0 on success.
  */
 int specifier_d(va_list ap)
 {
-	int digit, rev, d, size = 0;
 	int dval = va_arg(ap, int);
 
-	if (dval < 0)
-	{
-		size += _putchar('-');
-		digit = ('0' - (dval % 10));
-		dval /= -10;
-	}
-	else
-	{
-		digit = ((dval % 10) + '0');
-		dval /= 10;
-	}
-	rev = 0;
-	for (; dval > 0;)
-	{
-		rev = ((rev * 10) + (dval % 10));
-		dval /= 10;
-	}
-	for (; rev > 0;)
-	{
-		d = ((rev % 10) + '0');
-		size += _putchar(d);
-		rev /= 10;
-	}
-	size += _putchar(digit);
-
-	return (size);
+	return (recursion_d(dval));
 }
 /**
  * specifier_i - Convert the argument into integers.
@@ -43,33 +38,7 @@ int specifier_d(va_list ap)
  */
 int specifier_i(va_list ap)
 {
-	int digit, rev, d, size = 0;
 	int dval = va_arg(ap, int);
 
-	if (dval < 0)
-	{
-		size += _putchar('-');
-		digit = ('0' - (dval % 10));
-		dval /= -10;
-	}
-	else
-	{
-		digit = ((dval % 10) + '0');
-		dval /= 10;
-	}
-	rev = 0;
-	for (; dval > 0;)
-	{
-		rev = ((rev * 10) + (dval % 10));
-		dval /= 10;
-	}
-	for (; rev > 0;)
-	{
-		d = ((rev % 10) + '0');
-		size += _putchar(d);
-		rev /= 10;
-	}
-	size += _putchar(digit);
-
-	return (size);
+	return (recursion_d(dval));
 }
