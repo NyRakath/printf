@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				f = get_specifier(++p);
-				if (f == 0)
+				if (f == NULL)
 				{
 					_putchar('%'), _putchar(*p), counter++;
 					continue;
