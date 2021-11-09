@@ -27,9 +27,11 @@ int recursion_d(int n)
  */
 int specifier_d(va_list ap)
 {
+	int size = 0;
 	int dval = va_arg(ap, int);
 
-	return (recursion_d(dval));
+	size = recursion_d(dval);
+	return (size);
 }
 /**
  * specifier_i - Convert the argument into integers.
@@ -38,7 +40,9 @@ int specifier_d(va_list ap)
  */
 int specifier_i(va_list ap)
 {
+	int size = 0;
 	int dval = va_arg(ap, int);
 
-	return (recursion_d(dval));
+	size = recursion_d(dval);
+	return (size);
 }
