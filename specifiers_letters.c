@@ -9,7 +9,7 @@ int specifier_c(va_list ap)
 	int length = 0;
 	char cval = va_arg(ap, int);
 
-	_putchar((char)va_arg(ap, int));
+	_putchar(cval);
 	length++;
 	return (length);
 }
