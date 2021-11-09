@@ -27,19 +27,17 @@ int _printf(const char *format, ...)
 		{
 			if (*(p + 1) == '%')
 			{
-				_putchar(*p), p++; counter++;
+				counter += _putchar(*p), p++;
 				continue;
 			}
-			else
+
+			f = get_specifier(++p);
+			if (f == NULL)
 			{
-				f = get_specifier(++p);
-				if (f == NULL)
-				{
-					_putchar(*(p - 1)), _putchar(*p), counter++;
-					continue;
-				}
-				counter += f(ap);
+				_putchar(*(p - 1)), _putchar(*p), counter++;
+				continue;
 			}
+			counter += f(ap);
 		}
 	}
 	va_end(ap);
