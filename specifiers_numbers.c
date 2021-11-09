@@ -38,6 +38,5 @@ int specifier_i(va_list ap)
 {
 	int dval = va_arg(ap, int);
 
-	recursion_d(dval);
-	return (0);
+	return (recursion_d(dval));
 }
