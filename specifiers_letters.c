@@ -6,12 +6,8 @@
  */
 int specifier_c(va_list ap)
 {
-	int length = 0;
-	char cval = va_arg(ap, int);
-
-	_putchar(cval);
-	length++;
-	return (length);
+	_putchar((char)va_arg(ap, int));
+	return (1);
 }
 /**
  * specifier_s - Convert the argument into a string.
