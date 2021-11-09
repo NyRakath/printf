@@ -9,10 +9,8 @@ int recursion_d(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = (-(n));
+		n = -n;
 	}
-	if (n == 0)
-		_putchar('0');
 	if (n / 10)
 		recursion_d(n / 10);
 	_putchar(n % 10 + '0');
@@ -38,6 +36,5 @@ int specifier_i(va_list ap)
 {
 	int dval = va_arg(ap, int);
 
-	recursion_d(dval);
-	return (0);
+	return (recursion_d(dval));
 }
