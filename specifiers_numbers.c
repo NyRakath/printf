@@ -9,7 +9,7 @@ int recursion_d(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n = (-(n));
 	}
 	if (n / 10)
 		recursion_d(n / 10);
