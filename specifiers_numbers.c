@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * powfake - represent power of the number
- * @num: Base number
- * @powe: Power number
- * Return: recursion of the funtion * num
+ * _pow - Represent power of the number.
+ * @num: Base number.
+ * @powe: Power number.
+ * Return: recursion of the funtion * num.
  */
-int powfake(int num, int powe)
+int _pow(int num, int powe)
 {
 	if (powe <= 0)
 		return (1);
 	else
-		return (num * powfake(num, powe - 1));
+		return (num * _pow(num, powe - 1));
 }
 /**
  * specifier_d - Convert the argument into integers.
@@ -20,9 +20,9 @@ int powfake(int num, int powe)
  */
 int specifier_d(va_list ap)
 {
-	int last_digit = 0, reversedn = 0, first_number = 0, savenumb = 0;
 	int n = va_arg(ap, int);
 	int i = 0, d = 0, a = 0, size = 0;
+	int first_number = 0, last_digit = 0, reverse = 0, savenumb = 0;
 
 	savenumb = n;
 	if (n < 0)
@@ -36,24 +36,21 @@ int specifier_d(va_list ap)
 		last_digit = ((n % 10) + '0');
 		n /= 10;
 	}
-	for (reversedn = 0; n > 0; i++)
+	for (reverse = 0; n > 0; i++)
 	{
-		reversedn = ((reversedn * 10) + (n % 10));
+		reverse = ((reverse * 10) + (n % 10));
 		n /= 10;
 		if (n <= 9)
-		{
-			first_number = reversedn;
-		}
+			first_number = reverse;
 	}
-	for (; reversedn > 0;)
+	for (; reverse > 0;)
 	{
-		d = ((reversedn % 10) + '0');
-
+		d = ((reverse % 10) + '0');
 		size += _putchar(d);
-		reversedn /= 10;
+		reverse /= 10;
 	}
 	size += _putchar(last_digit);
-	if (first_number == (savenumb / powfake(10, i)))
+	if (first_number == (savenumb / _pow(10, i)))
 	{
 		for (a = 0; a <= i - 2; a++)
 			size += _putchar('0');
