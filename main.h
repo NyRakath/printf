@@ -5,6 +5,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+
 /**
  * struct conversion - Structure to data conversion.
  * @letter: Character to specify the data type.
@@ -25,5 +27,6 @@ int specifier_d(va_list);
 int specifier_i(va_list);
 int recursion_d(int n);
 int (*f)(va_list);
+int poten(int numero, int potencia);
 
 #endif /* MAIN_H */
