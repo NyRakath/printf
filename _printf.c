@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(p + 1) == '%')
 			{
-				_putchar(*p), p++, counter++;
+				_putchar(*p), counter++;
 				continue;
 			}
 			else
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				f = get_specifier(++p);
 				if (f == NULL)
 				{
-					_putchar('%'), _putchar(*p), counter++;
+					_putchar(*(p - 1)), _putchar(*p), counter++;
 					continue;
 				}
 				counter += f(ap);
