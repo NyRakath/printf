@@ -30,11 +30,12 @@ int _printf(const char *format, ...)
 				counter += _putchar(*p), p++;
 				continue;
 			}
-
-			f = get_specifier(++p);
+			++p;
+			f = get_specifier(p);
 			if (f == NULL)
 			{
-				_putchar(*(p - 1)), _putchar(*p), counter++;
+				counter += _putchar(*(p - 1));
+				counter += _putchar(*p);
 				continue;
 			}
 			counter += f(ap);
