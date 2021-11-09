@@ -44,8 +44,7 @@ int specifier_d(va_list ap)
 int specifier_i(va_list ap)
 {
 	int size = 0;
-	int dval = va_arg(ap, int);
 
-	size = recursion_d(dval);
+	size = specifier_d(ap);
 	return (size);
 }
