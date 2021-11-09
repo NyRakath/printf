@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format);
-	for (p = format; *p; p++)
+	for (p = format; *p && format; p++)
 	{
 		if (*p != '%')
 		{
