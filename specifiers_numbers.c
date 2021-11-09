@@ -58,7 +58,7 @@ int specifier_d(va_list ap)
 		for (a = 0; a <= i - 2; a++)
 			size += _putchar('0');
 	}
-	return (savenumb);
+	return (size);
 }
 /**
  * specifier_i - Convert the argument into integers.
