@@ -9,7 +9,6 @@ int (*get_specifier(const char *format))(va_list)
 	specifiers type[] = {
 	    {'c', specifier_c},
 	    {'s', specifier_s},
-	    {'%', specifier_per},
 	    {'d', specifier_d},
 	    {'i', specifier_i},
 	    {'\0', NULL}};
