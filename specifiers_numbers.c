@@ -20,9 +20,9 @@ int powfake(int num, int powe)
  */
 int specifier_d(va_list ap)
 {
-	int last_digit, reversedn, first_number, savenumb, a, size = 0;
+	int last_digit = 0, reversedn = 0, first_number = 0, savenumb = 0;
 	int n = va_arg(ap, int);
-	int i = 0;
+	int i = 0, d = 0, a = 0, size = 0;
 
 	savenumb = n;
 	if (n < 0)
@@ -47,12 +47,12 @@ int specifier_d(va_list ap)
 	}
 	for (; reversedn > 0;)
 	{
-		int d = ((reversedn % 10) + '0');
+		d = ((reversedn % 10) + '0');
 
 		size += _putchar(d);
 		reversedn /= 10;
 	}
-	_putchar(last_digit);
+	size += _putchar(last_digit);
 	if (first_number == (savenumb / powfake(10, i)))
 	{
 		for (a = 0; a <= i - 2; a++)
