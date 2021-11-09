@@ -25,6 +25,12 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			if (*p == '%' && *(p + 1) == '%')
+			{
+				_putchar('%');
+				p++;
+				continue;
+			}
 			++p;
 			f = get_specifier(p);
 			counter += f(ap);
