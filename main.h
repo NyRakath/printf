@@ -25,8 +25,7 @@ int specifier_c(va_list);
 int specifier_s(va_list);
 int specifier_d(va_list);
 int specifier_i(va_list);
-int recursion_d(int n);
+int _pow(int num, int powe);
 int (*f)(va_list);
-int poten(int numero, int potencia);
 
 #endif /* MAIN_H */
