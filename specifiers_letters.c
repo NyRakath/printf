@@ -26,14 +26,3 @@ int specifier_s(va_list ap)
 	}
 	return (length);
 }
-/**
- * specifier_per - Convert the argument into %.
- * @ap: Pointer to the list of arguments.
- * Return: 0 on success.
- */
-int specifier_per(va_list ap)
-{
-	(void)va_arg(ap, int);
-	_putchar('%');
-	return (0);
-}
