@@ -11,7 +11,8 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 	const char *p;
 
-	if (!format)
+	if (format == NULL ||
+	    (*(format) == '%' && *(format + 1) == '\0'))
 		return (-1);
 
 	va_start(ap, format);
@@ -19,21 +20,26 @@ int _printf(const char *format, ...)
 	{
 		if (*p != '%')
 		{
-			_putchar(*p);
-			counter++;
+			_putchar(*p), counter++;
 			continue;
 		}
 		else
 		{
-			if (*p == '%' && *(p + 1) == '%')
+			if (*(p + 1) == '%')
 			{
-				_putchar('%');
-				p++;
+				_putchar(*p), p++, counter++;
 				continue;
 			}
-			++p;
-			f = get_specifier(p);
-			counter += f(ap);
+			else
+			{
+				f = get_specifier(++p);
+				if (f == 0)
+				{
+					_putchar('%'), _putchar(*p), counter++;
+					continue;
+				}
+				counter += f(ap);
+			}
 		}
 	}
 	va_end(ap);
