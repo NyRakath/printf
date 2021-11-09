@@ -1,26 +1,13 @@
 #include "main.h"
 /**
- * length - Take the length of a string.
- * @s: String to be count.
- * Return: Length of the string.
- */
-int length(char *s)
-{
-	char *p;
-
-	while (*p)
-		p++;
-	return (p - s);
-}
-/**
  * specifier_c - Convert the argument into a char
  * @ap: Pointer to the list of arguments.
- * Return: 0 on success.
+ * Return: 1 on success.
  */
 int specifier_c(va_list ap)
 {
 	_putchar((char)va_arg(ap, int));
-	return (0);
+	return (1);
 }
 /**
  * specifier_s - Convert the argument into a string.
@@ -29,11 +16,15 @@ int specifier_c(va_list ap)
  */
 int specifier_s(va_list ap)
 {
+	int length = 0;
 	char *sval;
 
 	for (sval = va_arg(ap, char *); *sval; sval++)
+	{
 		_putchar(*sval);
-	return (0);
+		length++;
+	}
+	return (length);
 }
 /**
  * specifier_per - Convert the argument into %.
