@@ -21,7 +21,6 @@ int _printf(const char *format, ...);
 int (*get_specifier(const char *format))(va_list);
 int specifier_c(va_list);
 int specifier_s(va_list);
-int specifier_per(va_list);
 int specifier_d(va_list);
 int specifier_i(va_list);
 int recursion_d(int n);
