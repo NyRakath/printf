@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(p + 1) == '%')
 			{
-				_putchar(*p), counter++;
+				_putchar(*p), p++; counter++;
 				continue;
 			}
 			else
