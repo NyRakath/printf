@@ -4,7 +4,7 @@
 
 **_printf** is based on emulating the normal C library printf which is used for make formatted prints.
 
- This is a [Holberton School][https://www.holbertonschool.com/] partner project with [@viajeradelaluz][https://github.com/viajeradelaluz] and [@NyRakath][https://github.com/NyRakath]. _printf will load the data and converts them to character string and output to `stdout`.
+ This is a [Holberton School](https://www.holbertonschool.com/) partner project with [@viajeradelaluz](https://github.com/viajeradelaluz) and [@NyRakath](https://github.com/NyRakath). _printf will load the data and converts them to character string and output to `stdout`.
 
 This document explains how printf works and how to design the right format specification for any occasion
 
