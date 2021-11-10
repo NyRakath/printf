@@ -14,7 +14,9 @@ This document explains how printf works and how to design the right format speci
 
 ### Description
 
-Prints formated arguments in the presence of the universal symbol `%(FORMAT)` if this symbol isnt presence in the parameter passed, the function will only print the string without any formated option **FORMAT** identifies a value after his invocation `[ %[formater]]`, these "formater" especifies the output way of a variable or the same **FORMAT** argument string
+Prints formated arguments in the presence of the universal symbol `%(FORMAT)` if this symbol isnt presence in the parameter passed, the function will only print the string without any formated option **FORMAT** identifies a value after his invocation `[ %[formater]]`, these "formater" especifies the output way of a variable or the same **FORMAT** argument string.
+
+![Flowchar of _printf function](/_printf_flowchar.jpg)
 
 ### Project  Requirements
 
